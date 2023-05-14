@@ -22,27 +22,32 @@ const options = {
 
 flatpickr(input, options);
 
-const targetDate = new Date('Jan 1, 2024 00:00:00');
-const currentDataInMs = Date.now();
-const targetDateInMs = targetDate.getTime();
-const distanceToTargetDate = targetDateInMs - currentDataInMs;
-console.log(distanceToTargetDate);
+setInterval(() => {
+  const targetDate = new Date('Jan 1, 2024 00:00:00');
+  const currentDataInMs = Date.now();
+  const targetDateInMs = targetDate.getTime();
+  const distanceToTargetDate = targetDateInMs - currentDataInMs;
 
-function convertMs(ms) {
-  // Number of milliseconds per unit of time
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
+  function convertMs(distanceToTargetDate) {
+    // Number of milliseconds per unit of time
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
 
-  // Remaining days
-  const days = Math.floor(ms / day);
-  // Remaining hours
-  const hours = Math.floor((ms % day) / hour);
-  // Remaining minutes
-  const minutes = Math.floor(((ms % day) % hour) / minute);
-  // Remaining seconds
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+    // Remaining days
+    const days = Math.floor(distanceToTargetDate / day);
+    // Remaining hours
+    const hours = Math.floor((distanceToTargetDate % day) / hour);
+    // Remaining minutes
+    const minutes = Math.floor(((distanceToTargetDate % day) % hour) / minute);
+    // Remaining seconds
+    const seconds = Math.floor(
+      (((distanceToTargetDate % day) % hour) % minute) / second
+    );
 
-  return { days, hours, minutes, seconds };
-}
+    return { days, hours, minutes, seconds };
+    input.innerText =
+      '${days} days ${hours} hours ${minutes} minutes ${seconds} seconds';
+  }
+}, 1000);
