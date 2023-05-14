@@ -4,7 +4,7 @@ const inputAmount = document.querySelector('input[amount]');
 const submitBtn = document.querySelector('button');
 
 const onClick = () => {
-  const delay = [],
+  const delay = inputAmount,
   
     
     setInterval(() => { },
@@ -13,7 +13,7 @@ const onClick = () => {
 
 submitBtn.addEventListener('click', createPromise);
 
-function createPromise(position, delay) {
+const createPromise = (position, delay) => {
   const shouldResolve = Math.random() > 0.3;
   if (shouldResolve) {
     // Fulfill
