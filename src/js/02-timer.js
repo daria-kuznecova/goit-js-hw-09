@@ -11,7 +11,7 @@ function flatpickr(input, options) {
     defaultDate: new Date(),
     minuteIncrement: 1,
     onClose(selectedDates) {
-      if (selectedDates < Date.now()) {
+      if (selectedDates[0] <= Date.now()) {
         window.alert('Please choose a date in the future');
       }
       console.log(selectedDates[0]);
