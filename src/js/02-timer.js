@@ -84,6 +84,9 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
+
+  document.getElementById('timer').innerHTML =
+    '${days} days ${hours} hours ${minutes} minutes ${seconds} seconds';
 }
 
 function addLeadingZero(value) {
