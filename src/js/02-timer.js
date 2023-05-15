@@ -51,18 +51,16 @@ function changeTimerValue(selectedTime) {
         const ms = targetTime - currentTime;
         const convertTime = convertMs(ms);
 
-        timerValue.days.textContent = days;
-        timerValue.hours.textContent = hours;
-        timerValue.minutes.textContent = minutes;
-        timerValue.seconds.textContent = seconds;
+        days = timerValue.days.value;
+        hours = timerValue.hours.value;
+        minutes = timerValue.minutes.valeu;
+        seconds = timerValue.seconds.value;
 
         if (ms >= 0) {
           clearInterval(timerId);
         }
 
         return { days, hours, minutes, seconds };
-        input.innerText =
-          '${days} days ${hours} hours ${minutes} minutes ${seconds} seconds';
       }, 1000);
     },
   };
@@ -88,6 +86,9 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
 // btnStart.addEventListener(
 //   'click',
 //   () => {
