@@ -38,6 +38,7 @@ function changeTimerValue() {
     const currentTime = Date.now();
     const ms = targetTime - currentTime;
     const convertTime = convertMs(ms);
+    console.log(convertTime);
     updateClock(convertTime);
 
     if (ms <= 1000) {
@@ -65,11 +66,11 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-function updateClock(days, hours, minutes, seconds) {
-  days = timerValue.days.textContent;
-  hours = timerValue.hours.textContent;
-  minutes = timerValue.minutes.textContent;
-  seconds = timerValue.seconds.textContent;
+function updateClock({ days, hours, minutes, seconds }) {
+  timerValue.days.textContent = addLeadingZero(days);
+  timerValue.hours.textContent = addLeadingZero(hours);
+  timerValue.minutes.textContent = addLeadingZero(minutes);
+  timerValue.seconds.textContent = addLeadingZero(seconds);
 }
 
 function addLeadingZero(updateClock) {
