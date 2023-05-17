@@ -1,0 +1,2 @@
+document.querySelector("input[delay]"),document.querySelector("input[step]"),document.querySelector("input[amount]"),document.querySelector("button");((e,o)=>{const t=new Promise(((n,l)=>{const i=Math.random()>.3;setInterval((()=>{i?n(`✅ Fulfilled promise ${e} in ${o}ms`):l(`❌ Rejected promise ${e} in ${o}ms`),console.log(t)}),1e3)}))})(2,1500).then((({position:e,delay:o})=>{console.log(`✅ Fulfilled promise ${e} in ${o}ms`)})).catch((({position:e,delay:o})=>{console.log(`❌ Rejected promise ${e} in ${o}ms`)}));
+//# sourceMappingURL=03-promises.e877ae38.js.map
