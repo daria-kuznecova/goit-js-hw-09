@@ -1,40 +1,35 @@
-const inputDelay = document.querySelector('input[delay]');
-const inputStep = document.querySelector('input[step]');
-const inputAmount = document.querySelector('input[amount]');
-const submitBtn = document.querySelector('button');
+// const inputDelay = document.querySelector('input[delay]');
+// const inputStep = document.querySelector('input[step]');
+// const inputAmount = document.querySelector('input[amount]');
+// const submitBtn = document.querySelector('button');
 
-// const everyStep = inputDelay + inputStep * inputAmount;
-
-// console.log(everyStep);
+const form = document.querySelector('.form');
 
 const createPromise = (position, delay) => {
-  //   // const delay = everyStep;
-  //   // const amount = 0;
-  //   // if (let i = 0, i <= amount, i++) {
-
-  //   // }
-  //
   const promise = new Promise((resolve, reject) => {
+    const amount = 0;
     const shouldResolve = Math.random() > 0.3;
-
-    setInterval(() => {
-      if (shouldResolve) {
-        // Fulfill
-        resolve(`✅ Fulfilled promise ${position} in ${delay}ms`);
-      } else {
-        // Reject
-        reject(`❌ Rejected promise ${position} in ${delay}ms`);
-      }
-      console.log(promise);
-    }, 1000);
+    for (i = 0; i <= amount; i++) {
+      amount++;
+      setInterval(() => {
+        if (shouldResolve) {
+          // Fulfill
+          resolve(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        } else {
+          // Reject
+          reject(`❌ Rejected promise ${position} in ${delay}ms`);
+        }
+        console.log(promise);
+      }, 1000);
+    }
   });
 };
-// submitBtn.addEventListener('click', createPromise);
+form.addEventListener('submit', createPromise(position, delay));
 
-createPromise(2, 1500)
-  .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+createPromise
+  .then((position, delay) => {
+    console.log(value);
   })
-  .catch(({ position, delay }) => {
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  .catch(error => {
+    console.log(error);
   });
