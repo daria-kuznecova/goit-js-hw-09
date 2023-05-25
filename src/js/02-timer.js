@@ -5,7 +5,7 @@ const input = document.querySelector('#datetime-picker');
 const btnStart = document.querySelector('button[data-start]');
 btnStart.disabled = true;
 const timerValue = {
-  days: document.querySelector('[data-days'),
+  days: document.querySelector('[data-days]'),
   hours: document.querySelector('[data-hours]'),
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
