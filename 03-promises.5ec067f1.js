@@ -1,0 +1,2 @@
+const e=document.querySelector(".form"),t=document.querySelector("input[amount]");e.addEventListener("submit",(function(o){for(o.preventDefault(),e.disabled=!0,i=1;i<=t;i++){const e=input.delay.value+input.step.value*i;console.log(e)}})),promise.then((({position:e,delay:i})=>{Notify.success(`Fulfilled promise ${e} in ${i} ms`)})).catch((({position:e,delay:i})=>{Notify.failure(`Rejected promise ${e} in ${i} ms`)}));
+//# sourceMappingURL=03-promises.5ec067f1.js.map
